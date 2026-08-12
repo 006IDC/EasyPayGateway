@@ -1,0 +1,14 @@
+/dist/
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+*.log
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.zip
+*.tar
+*.tar.gz
