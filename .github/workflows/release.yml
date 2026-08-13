@@ -66,8 +66,13 @@ jobs:
             dist/easy_pay_gateway_*.zip
             dist/SHA256SUMS
 
-      - name: Create or update GitHub release
+      - name: Create draft and publish immutable GitHub release
         run: |
           gh release view "$RELEASE_REF" >/dev/null 2>&1 || \
-            gh release create "$RELEASE_REF" --verify-tag --generate-notes
+            gh release create "$RELEASE_REF" --verify-tag --generate-notes --draft
+          test "$(gh release view "$RELEASE_REF" --json isDraft --jq .isDraft)" = "true" || {
+            echo "::error::Release $RELEASE_REF is already published and immutable."
+            exit 1
+          }
           gh release upload "$RELEASE_REF" dist/* --clobber
+          gh release edit "$RELEASE_REF" --draft=false
