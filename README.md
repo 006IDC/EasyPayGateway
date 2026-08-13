@@ -1,5 +1,11 @@
 # EasyPay Gateway for ZJMF-CBAP V10
 
+[![CI](https://github.com/006IDC/EasyPayGateway/actions/workflows/ci.yml/badge.svg)](https://github.com/006IDC/EasyPayGateway/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/006IDC/EasyPayGateway)](https://github.com/006IDC/EasyPayGateway/releases)
+[![License](https://img.shields.io/github/license/006IDC/EasyPayGateway)](LICENSE)
+
+由 [零零陆云计算（006IDC）](https://github.com/006IDC) 独立维护。
+
 一个可自行配置易支付 V1 收银台地址的 ZJMF-CBAP V10 Gateway 插件。仓库不包含真实商户号、商户密钥、生产域名、服务器资料或客户数据。
 
 ## 主要能力

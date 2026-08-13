@@ -1,0 +1,27 @@
+name: 功能建议
+description: 提议与支付网关范围一致的新能力或兼容性改进。
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景
+      description: 当前网关、支付通道或主题兼容中遇到了什么限制？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+      description: 说明期望行为，以及对回调、金额、订单归属和重复通知的影响。
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 安全确认
+      options:
+        - label: 我没有提交商户密钥、支付者信息、会话或生产日志。
+          required: true

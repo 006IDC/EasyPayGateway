@@ -38,7 +38,7 @@ done
 
 php "$REPO_ROOT/tests/contract_test.php"
 
-BLOCKED_IDENTITY='0{2}6|z[e]ro[ _-]*zero[ _-]*six|零零[陆]|ex[c]ashier|175[.]178[.]97[.]112|7W[z]W|Z[e]roZeroSix|private[_ -]*updat'
+BLOCKED_IDENTITY='ex[c]ashier|175[.]178[.]97[.]112|7W[z]W|private[_ -]*updat'
 if grep -RInE -I "$BLOCKED_IDENTITY" "$REPO_ROOT" --exclude-dir=.git --exclude-dir=dist --exclude='*.zip'; then
     fail 'private identity or infrastructure data found'
 fi
@@ -55,7 +55,7 @@ fi
 
 URLS=$(grep -RhoE -I 'https?://[A-Za-z0-9._:-]+' "$REPO_ROOT" --exclude-dir=.git --exclude-dir=dist --exclude='*.zip' || true)
 if [ -n "$URLS" ]; then
-    BAD_URLS=$(printf '%s\n' "$URLS" | sed -E 's#^https?://##' | grep -Eiv '(^|[.])example[.]com(:[0-9]+)?$' || true)
+    BAD_URLS=$(printf '%s\n' "$URLS" | sed -E 's#^https?://##' | grep -Eiv '^(github[.]com|img[.]shields[.]io|([A-Za-z0-9-]+[.])*example[.]com)(:[0-9]+)?$' || true)
     [ -z "$BAD_URLS" ] || {
         printf '%s\n' "$BAD_URLS" >&2
         fail 'non-example URL found'
