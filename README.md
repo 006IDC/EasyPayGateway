@@ -1,4 +1,4 @@
-# V10 易支付 V1 网关插件
+# V10 易支付 V1 网关插件（开源版）
 
 ## 产品介绍
 
@@ -8,7 +8,7 @@
 
 | 项目 | 公开说明 |
 | --- | --- |
-| 公开发行版本 | [v1.0.1](https://github.com/006IDC/EasyPayGateway/releases/tag/v1.0.1) |
+| 公开发行版本 | [v1.0.1](https://github.com/006IDC/v10-easypay-gateway-public/releases/tag/v1.0.1) |
 | 适用环境 | 按 V10 10.4.6 本地源码合同开发；PHP 7.3 语法兼容 / MySQL InnoDB |
 | 使用边界 | 目标实例仍需独立验证；仅 CNY，不声明自动退款能力。V1 的 MD5 拼接密钥属于历史兼容算法。 |
 
